@@ -1,66 +1,81 @@
-## Foundry
+# hello-celo
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+Este proyecto aplica todo lo aprendido en el **DeFi Builder Bootcamp** organizado por **Celo Colombia**.
 
-Foundry consists of:
+Aquí encontrarás contratos inteligentes desarrollados con [Foundry](https://book.getfoundry.sh/) y Solidity, así como scripts y pruebas para desplegar y verificar los contratos en la red de Celo.
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+## Estructura del proyecto
 
-## Documentation
+- `src/`: Contratos inteligentes en Solidity
+- `script/`: Scripts de despliegue y automatización
+- `test/`: Pruebas automatizadas
+- `broadcast/`: Logs de despliegue
 
-https://book.getfoundry.sh/
+## Requisitos
 
-## Usage
+- [Foundry](https://book.getfoundry.sh/getting-started/installation)
+- Node.js (opcional, para scripts adicionales)
 
-### Build
+## Configuración
 
-```shell
-$ forge build
+1. Copia el archivo `.env.example` a `.env` y agrega tus variables de entorno:
+   ```sh
+   cp .env.example .env
+   ```
+2. Llena los valores necesarios en `.env` (por ejemplo, `RPC_URL`, `PRIVATE_KEY`, etc).
+
+## Comandos útiles
+
+### Compilar contratos
+
+```sh
+forge build
 ```
 
-### Test
+### Ejecutar pruebas
 
-```shell
-$ forge test
+```sh
+forge test
 ```
 
-### Format
+### Formatear código
 
-```shell
-$ forge fmt
+```sh
+forge fmt
 ```
 
-### Gas Snapshots
+### Tomar snapshot de gas
 
-```shell
-$ forge snapshot
+```sh
+forge snapshot
 ```
 
-### Anvil
+### Levantar nodo local (Anvil)
 
-```shell
-$ anvil
+```sh
+anvil
 ```
 
-### Deploy
+### Desplegar contratos
 
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
+```sh
+forge script script/Deploy.s.sol --rpc-url $RPC_URL --private-key $PRIVATE_KEY --broadcast
 ```
 
-### Cast
+### Usar Cast (herramienta CLI de Foundry)
 
-```shell
-$ cast <subcommand>
+```sh
+cast <subcomando>
 ```
 
-### Help
+### Ayuda de comandos
 
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
+```sh
+forge --help
+anvil --help
+cast --help
 ```
+
+---
+
+¡Este repositorio es parte del aprendizaje y la comunidad de Celo Colombia! 🚀
